@@ -1,0 +1,552 @@
+1 - Python abs()
+#returns absolute value of a number.
+a = float(input("Enter the number: "))
+print(abs(a))
+
+2 - Python all()
+# returns true when all elements in iterable is true. 
+print(all([True, True, True]))
+print(all([1, 2, 3, 4, 5, "python"]))
+print(all(["omid", "ali"]))
+print(all([1,2 ,3, 4,5 ,6]))
+print(all([0, 1, 2, 4]))
+print(all([False, False]))
+print(all("python"))
+print(all([0]))
+print(all([""]))
+
+3 - Python any()
+# Checks if any Element of an Iterable is True. 
+a = ["omid", "zaki", "saber", 0]
+print(any(a))
+a = ""
+print(any(a))
+print(any([0,0,0,0,0,0,0,0,0,1]))
+print(any([False, False, False]))
+
+4 - Python ascii()
+#Returns String Containing Printable Representation.
+print(ascii("Omid shahezad"))
+print(ascii("ه"))
+print('\u0647')
+
+5 - Python bin()
+#converts integer to binary string.
+print(bin(8))
+print(bin(800))
+print(bin(947395))
+print(bin(0))
+
+6 - Python bool()
+#converts a value to boolean.
+print(bool(0))
+print(bool(1))
+print(bool("omid shahezada "))
+print(bool(""))
+
+7 - Python bytearray()
+#returns array of given byte size
+print(bytearray(20))
+
+8 - Python bytes()
+#returns immutable bytes object
+print(bytes(10))
+
+9 - Python callable()
+#Checks if the Object is Callable.
+a = "omid"
+print(callable(a))
+print(callable(abs))
+
+
+10 - Python chr()
+#Returns a Character (a string) from an Integer
+print(chr(99))
+print(chr(120))
+print(chr(86))
+print(chr(80))
+print(chr(220))
+
+11 - Python classmethod()
+#returns class method for given function
+class omid():
+    def ali(self):
+        print("omid")
+    def khalid(self, number):
+        print(number)
+print(classmethod(omid))
+
+
+12 - Python compile()
+#Returns a Python code object.
+code = "print('hello, world')"
+compiled_code = compile(code,'example', 'exec' )
+exec(compiled_code)
+
+13- python coplex()
+#creates a complex number.
+print(complex(3, 4))
+print(complex(1))
+print(complex(0, 10))
+a = complex(10, 20)
+print(f"The complex number is {a}")
+
+14- python delatter()
+# Deletes Attribute From the Object.
+class Myclass():
+    def __init__(self):
+        self.a1 = "Omid"
+        self.a2 = "zaki"
+obj = Myclass()
+print(obj.a1)
+print(obj.a2)
+
+delattr(obj, "a1")
+delattr(obj,"a2")
+print(obj.a1)
+print(obj.a2)
+
+
+15- python dict()
+#creates a dictionary.
+a = dict(omid = "ali", zaki = "mohammad")
+print(a["omid"])
+
+
+16- python dir()
+# Tries to Return Attributes of Object.
+class myclass():
+    def __init__(self):
+        self.a1 = "a"
+        self.a2 = "b"
+        self.a3 = "c"
+        self.a4 = "d"
+obj= myclass()
+print(dir(obj))
+
+a = [1, 2, 3, 4, 5, 6]
+print(dir(a))
+
+
+17-Python divmod()
+# Returns a Tuple of Quotient and Remainder.
+print(divmod(6, 3))
+
+a = 77239478
+b = 479
+c = divmod(a, b)
+print(c)
+
+18- Python enumerate()
+# Returns an Enumerate Object
+list1 = ["omid", "zaki", "saber"]
+
+for index, name in enumerate(list1):
+    print(index, name)
+
+for index, name in enumerate(list1):
+    d = dict(enumerate(list1))
+    print(d)
+m = list(enumerate(list1))
+print(m)
+
+
+19-Python eval()
+# Runs Python Code Within Program.
+a = "2 * 3"
+print(eval(a))
+
+20- Python exec() 
+# Executes Dynamically Created Program.
+a = "print(2+4+4 * 8)"
+exec(a)
+a = "print('hello world, I am Mr. Omid Shahezada.')"
+exec(a)
+
+
+21- Python fillter()
+# constructs iterator from elements which are true.
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+def even(number):
+    return number % 2 == 0
+b = filter(even, a)
+print(list(b))
+
+22-python float()
+#returns floating point number from number, string
+omid = 10
+print(float(omid))
+
+23- Python format()
+#returns formatted representation of a value
+for i in range(1,100):
+    print("{:2d}, {:3d}, {:4d}".format(i, i * i, i * i * i))
+
+
+omid = input("Enter your name: ")
+country = input("Enter your country name: ")
+province = input("Enter your province: ")
+print("My name is {}, from {} from {}.".format(omid, country, province))
+
+24-Python frozenset() 
+# returns immutable frozenset object.
+number = {1,23, 45}
+forzen = frozenset(number)
+print(forzen)
+
+a = [1, 2, 3 , 4, 5, 7]
+print(frozenset(a))
+
+b = (1, 2, 4, 5)
+print(frozenset(b))
+
+25-Python getattr() 
+# returns value of named attribute of an object
+class person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+person = person("ali", 30)
+name = getattr(person, "name")
+print(name)
+
+26-Python globals()
+# returns dictionary of current global symbol table
+x  = 10
+d = 10
+f = 100
+y = 20
+def my_function():
+    z = 20
+    print(globals())
+my_function()
+
+27- Python hasattr()
+# returns whether object has named attribute
+class omid:
+    def __init__(self):
+        self.a = 10
+        self.b = 100
+obj = omid()
+print(hasattr(obj, "c"))
+
+
+28-Python hash() 
+# returns hash value of an object
+obj = "omid"
+print(hash(obj))
+
+
+29-Python help() 
+#Invokes the built-in Help System
+help()
+
+help(hasattr())
+
+30-Python hex() 
+#Converts to Integer to Hexadecimal
+a = 7
+print(hex(a))
+
+31-Python id()
+# Returns Identify of an Object
+a = 10
+b = 100
+print(id(a))
+print(id(b))
+
+32-Python input() 
+# reads and returns a line of string
+a = input("enter your name: ")
+print(a)
+
+
+33-Python int()
+# returns integer from a number or string
+a = "9040248"
+b = int(a)
+print(b)
+
+34-Python isinstance() 
+# Checks if a Object is an Instance of Class
+class omid:
+    def __init__(self):
+        self.ali = 10
+obj = omid()
+print(isinstance(obj, omid))
+
+
+35-Python issubclass()
+
+# Checks if a Class is Subclass of another Class
+# Checks if a Object is an Instance of Class
+class omid1:
+    def __init__(self):
+        self.ali = 10
+class saber(omid1):
+    def __init__(self):
+        self.a = 10
+
+print(issubclass(saber, omid1))
+
+36-Python iter()
+# returns an iterator
+a = [1, 2, 3, 4, 5]
+b = iter(a)
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+
+37-Python len() 
+# Returns Length of an Object
+a = [1, 2, 3, 4, 5, 6]
+print(len(a))
+b = "omid shahezada"
+print(len(b))
+
+38-Python list() 
+# creates a list in Python
+a = "omid"
+print(list(a))
+
+39-Python locals()
+# Returns dictionary of a current local symbol table
+a = 100
+b = 1000
+def omid():
+    x = 2103
+    y =3729
+print(locals())
+
+40-Python map() 
+
+# Applies Function and Returns a List
+x = [1, 2, 4, 5]
+def even(x):
+    return x * 10
+print(list(map(even,x)))
+    
+
+41-Python max() 
+# returns the largest item
+a = [1, 2, 3, 4, 5]
+print(max(a))
+
+42-Python memoryview()
+# returns memory view of an argument
+data = bytearray(b"ooo")
+mv = memoryview(data)
+print(mv[0])
+
+43-Python min()
+# returns the smallest value
+a = [1, 2, 3, 4, 5, 6]
+print(min(a))
+
+44-Python next()
+# Retrieves next item from the iterator
+# returns an iterator
+a = [1, 2, 3, 4, 5]
+b = iter(a)
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+
+45-Python object()
+# creates a featureless object
+class omid(object):
+    pass
+ins = omid()
+print(isinstance(ins, object))
+
+46-python oct().py
+# returns the octal representation of an integer
+print(oct(8))
+print(oct(1))
+
+47-Python open() 
+# Returns a file object
+a = open("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\Hi, This is a project..txt")
+print(a.read())
+
+48-Python ord()
+# returns an integer of the Unicode character
+a = "O"
+print(ord(a))
+
+49-Python pow() 
+# returns the power of a number
+print(pow(9, 8))
+print(pow(2, 10))
+
+50-Python print()
+# Prints the Given Object
+print("a")
+print("My name is omid shahezada")
+
+51-Python property() 
+# returns the property attribute
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius   
+
+    def get_radius(self):
+        return self._radius
+
+    def set_radius(self, radius):
+        if radius >= 0:
+            self._radius = radius
+        else:
+            raise ValueError 
+
+    def del_radius(self):
+        del self._radius
+
+    radius = property(get_radius, set_radius, del_radius 
+
+c = Circle(5)
+print(c.radius)  
+c.radius = 10
+print(c.radius)  
+# c.radius = -5  
+
+52-Python range()
+# returns a sequence of integers
+x = [d for d in range(10)]
+print(x)
+
+53-Python repr()
+# returns a printable representation of the object
+omid = "omid"
+print(repr(omid))
+print(str(omid))
+ali = 3802489032
+print(repr(ali))
+print(str(ali))
+
+54-Python reversed() 
+# returns the reversed iterator of a sequence
+omid = [1,2,3,4,5,6]
+print(list(reversed(omid)))
+a = "omid shahezada"
+print(list(reversed(a)))
+
+55-Python round()
+# rounds a number to specified decimals
+a = 3232.7439832
+print(round(a, 6))
+print(round(a, 3))
+print(round(a,1))
+print(round(a))
+
+56-Python set()
+# constructs and returns a set
+a = "omid"
+print(set(a))
+
+57-Python setattr()
+# sets the value of an attribute of an object
+class person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+person= person("omid", 30)
+setattr(person, "age", 31)
+print(person.age)
+
+setattr(person, "last_name", "Shahezada")
+print(person.last_name)
+
+58-Python slice()
+# returns a slice object
+a = [1, 2,3 ,4 ,5 ,6 , 7,8]
+s = slice(1, 5, 1)
+print(a[s])
+
+59-Python sorted() 
+# returns a sorted list from the given iterable
+omid = "omid shahezada"
+print(list(sorted(omid)))
+
+60-Python staticmethod()
+# transforms a method into a static method
+class math:
+    def add(a, b):
+        return a + b
+    def mul(a,b):
+        return a * b
+print(math.add(2, 4))
+print(math.mul(9,9))
+
+61-Python str()
+# returns the string version of the object
+o = 9837489
+b = str(o)
+print(type(b))
+
+62-Python sum()
+# Adds items of an Iterable
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(sum(a, 1))
+
+63-Python super()
+# Returns a proxy object of the base class
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def speak(self):
+        super().speak()  
+        print("Dog barks")
+
+dog = Dog()
+dog.speak()
+
+64-Python tuple()
+# Returns a tuple
+a = "omid shahezada"
+print(tuple(a))
+
+65-Python type()
+# Returns the type of the object
+a =  10
+print(type(a))
+b = "20"
+print(type(b))
+
+66-Python vars()
+# Returns the __dict__ attribute
+# sets the value of an attribute of an object
+class person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+person= person("omid", 30)
+at = vars(person)
+print(at)
+
+67-Python zip()
+# Returns an iterator of tuples
+a = [1, 2, 3, 4]
+b = ["ali", "ali jan", "omid", "ff"]
+zipl = zip(a, b)
+print(list(zipl))
+
+68-Python __import__()
+# Function called by the import statement
+math_module = __import__('math')
+print(math_module.sqrt(16))  # 
+
+os_module = __import__('os', fromlist=['path'])
+print(os_module.path.abspath('.'))  
+
+# my_module = import('my_package.my_module', fromlist=['']
+
+
+

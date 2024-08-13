@@ -1,0 +1,8 @@
+a  = int(input("Enter the number: "))
+x = 1
+y = 0
+print(0)
+for i in range(a - 1):
+    x, y = y, x + y
+    print(y)  
+    

@@ -1,0 +1,950 @@
+1-.py
+# 1. Create a class called Person with attributes name and age. Create an object of the class and print its attributes.
+class person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def self_info(self):
+        return f"My name is {self.name} and I am {self.age} years old."
+info = person(name ="Omid", age= 20)
+print(info.self_info())
+print(info.age)
+print(info.name)
+
+
+2-.py
+# 2. Add a method called greet to the Person class that prints a greeting message including the person's name.
+class person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def greeting(self):
+        return f"Hi dear, how are you? My name is {self.name} and I am {self.age} years old!"
+greet = person(name= "Omid Shahezada", age= 20)
+print(greet.greeting())
+
+
+3-.py
+# 3. Create a class called Car with attributes make, model, and year. Include a method to print out the car's details.
+class car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+    def details(self):
+        return f"made in {self.make}, this car model is {self.model} and this car producted in {self.year}!"
+cardetails = car(make= "ford company", model= "Landcroser", year= 2020)
+print(cardetails.details())
+
+4-.py
+# 4. Create a class Circle with a method to compute the area. Initialize the class with the radius.
+class circle:
+    def __init__(self, radius = 0):
+        self.radius = radius
+    def area(self):
+        return 3.14 * self.radius ** 2
+    def primeter(self):
+        return 2 * 3.14 * self.radius
+c = circle(radius= 10)
+print(round(c.area(), 1))
+print(round(c.primeter(), 1))
+
+
+5-.py
+# 5. Create a class Rectangle with methods to compute the area and perimeter. Initialize the class with the length and width.
+class rectangle:
+    def __init__(self, width = 0, height = 0):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+    def primeter(self):
+        return 2 * (self.width + self.height)
+rec = rectangle(10, 20) 
+print(rec.area())
+print(rec.primeter())
+
+6-.py()
+# 6. Create a base class Animal with a method speak. Create two derived classes Dog and Cat that override the speak method. 
+class Animal:
+    def speak(self):
+        print("I can't speak.")
+
+class Dog(Animal):
+    def speak(self):
+        print("This is a dog, and it can't speak!")
+class Cat(Animal):
+    def speak(self):
+        print("This is a cat and it can not speak!")
+
+ani = Animal()
+dog1 = Dog()
+cat1 = Cat()
+
+ani.speak()
+dog1.speak()
+cat1.speak()
+
+7-.py()
+# 7. Create a base class Shape with a method area. Create derived classes Square and Triangle that implement the area method. 
+class shape:
+    def __init__(self, height, width):
+        self.height =height
+        self.width = width
+    def area(self):
+        pass
+class square(shape):
+    def __init__(self, height):
+        self.height = height
+    def area(self):
+        return self.height ** 2
+class rectangle(shape):
+    def area(self):
+        return self.height * self.width
+
+rec = rectangle(80, 50)
+squ = square(100)
+print(rec.area())
+print(squ.area())
+
+8-.py()
+# 8. Create a class Employee with attributes name and salary. Create a derived class Manager with an additional attribute department. 
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    def introduction(self):
+        print(f"My name is {self.name} and my salary is {self.salary}!")
+class Manager(Employee):
+    def __init__(self, name, salary, departemnt):
+        super().__init__(name, salary)
+        self.departement = departemnt
+    def introduction(self):
+        print(f"My name is {self.name}, I am a manager at {self.departement} departement of ministry of higher education and my salary is {self.salary} Af!")
+
+em = Employee("Ali", 10000)
+manager1 = Manager("Ali", 20000, "Managment")
+
+em.introduction()
+
+manager1.introduction()
+
+
+9-.py()
+# 9. Create a base class Vehicle with a method drive. Create derived classes Bike and Truck that override the drive method. 
+class vehicle:
+    def drive(self):
+        print("I drive a vehicle!")
+class bike(vehicle):
+    def drive(self):
+        print("I drive a bike!")
+class truck(vehicle):
+    def drive(self):
+        print("I drive a nice truck!")
+
+vehicle1 = vehicle()
+bike1 = bike()
+truck1 = truck()
+
+vehicle1.drive()
+bike1.drive()
+truck1.drive()
+
+10-.py()
+# 10. Create a base class Bird with a method fly. Create derived classes Eagle and Penguin. Override the fly method in Penguin to indicate that penguins cannot fly.
+class Bird:
+    def fly(self):
+        print("The bird can fly!")
+class Eagle(Bird):
+    pass
+class Penguin(Bird):
+    def fly(self):
+        print("The penguin can not fly!")
+
+bird = Bird()
+eagle = Eagle()
+penguin = Penguin()
+
+
+bird.fly()
+eagle.fly()
+penguin.fly()
+
+11-.py()
+# 11. Create a class Account with private attributes balance. Provide public methods to deposit and withdraw money.
+b = 0
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance
+    def deposit(self):
+        global b
+        b += self.__balance
+        print(f"deposit: {b}")
+    def withdraw(self):
+        a = float(input("Enter the money that you want to withdraw: "))
+        print(f"withdraw: {a}")
+balance = Account(3000)
+balance.deposit()
+balance.withdraw()
+
+
+12-.py()
+# 12. Create a class Book with private attributes title, author, and pages. Provide public methods to get and set these attributes.
+
+class Book:
+    def __init__(self, title, author, pages):
+        self.__title = title
+        self.__author = author
+        self.__pages = pages
+    def get(self):
+        global title, author, pages
+        title = self.__title
+        author = self.__author
+        pages = self.__pages
+    def set(self):
+        print(f"The title of this book is {self.__title} and the author of this book is {self.__author} and this book has {self.__pages} pages.")
+
+book = Book("The wourld best persons", "Mohammad", 500)
+book.set()
+
+13-.py()
+# 13. Create a class Laptop with private attributes brand, model, and price. Provide a method to apply a discount and a method to display laptop details.
+from random import randint
+class Laptop:
+    def __init__(self, brand, model, price):
+        self.__brand = brand
+        self.__model = model
+        self.__price = price
+    def discount(self):
+        global b
+        b = randint(10, 30)
+        print(f"{b}% Discount!")
+    def display(self):
+        c = self.__price - b / 100 * self.__price
+        print(f"brand: {self.__brand}\nmodel: {self.__model}\nprice: {self.__price}\nprice with discount: {c}")
+
+laptop1 = Laptop("DELL", "Latitude7390", 15000)
+laptop1. discount()
+laptop1.display()
+
+14-.py()
+# 14. Create a class BankAccount with private attributes account_number and balance. Provide methods to deposit, withdraw, and check the balance.
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.__account_number = account_number
+        self.__balance = balance
+    def deposit(self):
+        global a
+        a = self.__balance
+        print(a)
+    def withdraw(self):
+        global b
+        b = float(input("Enter the withdraw money: "))
+    def ceck_balance(self):
+        c = a - b
+        print(f"Your balance is: {c}")
+ba = BankAccount(10, 5000000)
+ba.deposit()
+ba.withdraw()
+ba.ceck_balance()
+
+
+15-.py
+# 15. Create a class Student with private attributes name, grade, and age. Provide methods to get and set these attributes and a method to display the student's details.
+class Student:
+    def __init__(self, name,grade, age ):
+        self.__name = name
+        self.__grade = grade
+        self.__age = age
+    def get(self):
+        global a, b, c
+        a = self.__name
+        b = self.__grade
+        c = self.__age
+    def stu_details(self):
+        print(f"My name is {a} and I am in {b} grade and I am {c} years old.")
+
+stu = Student("Omid", 2, 20)
+stu.get()
+stu.stu_details()
+
+16-.py()
+# 16. Create a class Library with attributes name and books (a list of Book objects). Provide methods to add and remove books.
+
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+    def add(self, book):
+        return self.books.append(book)
+    def add_more(self, list_books_name):
+        # give a list of books!
+        return self.books.extend(list_books_name)
+    def remove(self, book):
+        return self.books.remove(book)
+    def details(self):
+        print(f"School: {self.name}\nStudent Names: {self.books}")
+
+li = Library("Kabul Universit library")
+li.add("The srongest person")
+li.add("One person on the road")
+li.add("I am a gentelman")
+li.add("You are ugly")
+li.details()
+li.remove("You are ugly")
+li.details()
+
+17-.py()
+#17. Create a class School with attributes name and students (a list of Student objects). Provide methods to add and remove students.
+class Student:
+    def __init__(self, school_name):
+        self.school_name = school_name
+        self.student_name = []
+    def add(self, student_name):
+        return self.student_name.append(student_name)
+    def add_more(self, list_student_names):
+        # give a list of student names!
+        return self.student_name.extend(list_student_names)
+    def remove(self, student_name):
+        return self.student_name.remove(student_name)
+    def details(self):
+        print(f"School: {self.school_name}\nStudent Names: {self.student_name}")
+
+stu= Student("Ibrahim Khaliliullah High School")
+stu.add("Omid")
+stu.add_more(["Ali", "Zaki", "Saber", "Omer", "Mohammad"])
+stu.details()
+stu.remove("Ali")
+stu.details()
+
+18-.py
+# 18. Create a class Team with attributes name and members (a list of Person objects). Provide methods to add and remove members
+class Team:
+    def __init__(self, name):
+        self.name = name
+        self.members = []
+    def add(self, m_name):
+        return self.members.append(m_name)
+    def add_more(self, list_of_members):
+        return self.members.extend(list_of_members)
+    def remove(self, m_name):
+        return self.members.remove(m_name)
+    def details(self):
+        print(f"Team: {self.name}\nMembers: {self.members}")
+t = Team("Afghanistan Football Team")
+t.add("Fiasal")
+t.add_more(["Omid", "Yaser", "Saber"])
+t.details()
+t.remove("Saber")
+t.details()
+
+19-.py()
+# 19. Create a class Company with attributes name and employees (a list of Employee objects). Provide methods to add and remove employees.
+class Company:
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
+    def add(self, e_name):
+        return self.employees.append(e_name)
+    def add_more(self, list_of_employees):
+        return self.employees.extend(list_of_employees)
+    def remove(self, e_name):
+        return self.employees.remove(e_name)
+    def details(self):
+        print(f"Company: {self.name}\nEmployees: {self.employees}")
+c = Company("Ahmadi Company")
+c.add("Fiasal")
+c.add_more(["Omid", "Yaser", "Saber"])
+c.details()
+c.remove("Saber")
+c.details()
+
+20-.py()# 20. Create a class Zoo with attributes name and animals (a list of Animal objects). Provide methods to add and remove animals.
+class Zoo:
+    def __init__(self, name):
+        self.name = name
+        self.animals = []
+    def add(self, a_name):
+        return self.animals.append(a_name)
+    def add_more(self, list_of_animals):
+        return self.animals.extend(list_of_animals)
+    def remove(self, a_name):
+        return self.animals.remove(a_name)
+    def details(self):
+        print(f"Zoo: {self.name}\nAnimals: {self.animals}")
+a = Zoo("Kabul Zoo")
+a.add("Lion")
+a.add_more(["Tiger", "Hen", "Bear"])
+a.details()
+a.remove("Bear")
+a.details()
+
+21-.py()
+# 21. Create a class FileManager with methods to read from and write to a file.
+class FileManager:
+    def read(self, path):
+        with open(path, "r") as f:
+            data = f.read()
+        print(data)
+    def write(self,path, w):
+        with open(path, "+w") as f:
+            data = f.write(w)
+file = FileManager()
+file.write("file.txt", "My name is Omid Shahezada.")
+file.read("file.txt")
+
+
+22-.py()
+# 22. Create a class Log with methods to write error messages to a log file.
+class Log:
+    def log_read(self, path):
+        with open(path, "r") as f:
+            data = f.read()
+        print(data)
+    def log_write(self,path, w):
+        with open(path, "+w") as f:
+            data = f.write(w)
+l= Log()
+l.write("file.txt", "This a wrong way to store dara!")
+l.read("file.txt")
+
+
+23-.py
+# 23. Create a class Config that reads configuration settings from a file and provides methods to access these settings.
+class Config:
+    def read_config(self, path):
+        with open(path, "r") as f:
+            data = f.read()
+        print(data)
+
+c = Config()
+c.read_config("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\Hi, This is a project..txt")
+
+24-.py()
+# 24. Create a class Database that connects to a database and provides methods to execute queries. Handle exceptions if the connection fail.
+import sqlite3
+
+class Database:
+    def __init__(self, db_file):
+        try:
+            self.conn = sqlite3.connect(db_file)
+        except sqlite3.Error as e:
+            print(f"Connection error: {e}")
+    
+    def execute(self, query, params=None):
+        try:
+            with self.conn:
+                cur = self.conn.cursor()
+                cur.execute(query, params or [])
+                return cur.fetchall() if query.strip().upper().startswith("SELECT") else None
+        except sqlite3.Error as e:
+            print(f"Query error: {e}")
+            return None
+    
+    def close(self):
+        if self.conn:
+            self.conn.close()
+
+# Example usage:
+db = Database("example.db")
+db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)")
+db.execute("INSERT INTO users (name) VALUES (?)", ("John Doe",))
+users = db.execute("SELECT * FROM users")
+print(users)
+db.close()
+
+
+25-.py()
+# 25. Create a class Report that generates a report from data in a file. Provide methods to handle exceptions if the file does not exist or cannot be read.
+class Report:
+    def re(self, path, w = ""):
+        with open(path, "w+") as f:
+            if f ==  True:
+                data = f.read()
+                print(data)
+            else:
+                print("The file does'nt exist, I create the new one!")
+        def write(self, path, w):
+            a = open(path, "w")
+            b = a.write()
+
+r = Report()
+r.re("file.txt")
+            
+
+
+26-.py()
+# 26. Create a class Ticket for a movie theater with attributes movie_name, seat_number, and price. Provide methods to display ticket details and apply discounts.
+from random import randint
+a = randint(1, 30)
+class Ticket:
+    def __init__(self, movie_name, price):
+        self.t_number = randint(1, 500)
+        self.movie_name = movie_name
+        self.seat_number = randint(1, 200)
+        self.price = price
+    def discount(self):
+        global a
+        print(f"Discount: {a}")
+    def details(self):
+        b = self.price - self.price / 100 * a
+        print(f"Tichet Number: {self.t_number}\nMovie Name: {self.movie_name}\nSeat Number: {self.seat_number}\nPrice: {self.price}\nPrice with Discount: {b}\nDiscount: {a}")  
+
+t = Ticket("The Wall Street", 1000) 
+t.details() 
+
+
+27-.py()
+class Item:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+        print(f"Added {item.name} to the cart.")
+
+    def remove_item(self, item_name):
+        for item in self.items:
+            if item.name == item_name:
+                self.items.remove(item)
+                print(f"Removed {item_name} from the cart.")
+                return
+        print(f"Item {item_name} not found in the cart.")
+
+    def display_items(self):
+        if not self.items:
+            print("The cart is empty.")
+            return
+        print("Items in the cart:")
+        for item in self.items:
+            print(f"{item.name}: ${item.price:.2f}")
+
+# Example usage:
+if __name__ == "__main__":
+    cart = ShoppingCart()
+    item1 = Item("Apple", 0.99)
+    item2 = Item("Banana", 0.59)
+    
+    cart.add_item(item1)
+    cart.add_item(item2)
+    cart.display_items()
+    
+    cart.remove_item("Apple")
+    cart.display_items()
+
+28-.py()
+#28. Create a class Restaurant with attributes name and menu (a list of Item objects). Provide methods to add and remove items from the menu.
+class Restaurant:
+    def __init__(self, name):
+        self.name = name
+        self.menu = ["rice", "meat", "spagati", "Manto"]
+    def add(self, food):
+        return self.menu.append(food)
+    def add_more(self, list_of_food):
+        return self.menu.extend(list_of_food)
+    def remove(self, food):
+        return self.menu.remove(food)
+    def details(self):
+        print(f"Restaurant Name: {self.name}\nMenu: {self.menu}")
+r = Restaurant("Sham Paris")
+r.add("Ashak")
+r.add_more(["soda", "Energy", "party"])
+r.details()
+r.remove("party")
+r.details()
+
+
+
+29-.py()
+#29. Create a class Flight with attributes flight_number, destination, and passengers (a list of Personobjects). Provide methods to add and remove passengers.
+from random import randint
+
+
+class Flight:
+    def __init__(self, flight_number):
+        self.flight_number = flight_number
+        self.destination = randint(100, 10000)
+        self.passengers = []
+    def add(self, passenger):
+        return self.passengers.append(passenger)
+    def add_more(self, list_passengers):
+        return self.passengers.extend(list_passengers)
+    def remove(self, passenger):
+        return self.passengers.remove(passenger)
+    def details(self):
+        print(f"Flight Number: {self.flight_number}\nDestination: {self.destination} Km\nPassengers: {self.passengers}")
+
+f = Flight(1)
+f.add("Ali")
+f.add_more(["Zaki", "Saber", "Omid"])
+f.details()
+f.remove("Ali")
+f.details()
+
+
+
+30-.py()
+class Room:
+    def __init__(self, room_number):
+        self.room_number = room_number
+        self.is_occupied = False
+
+class Hotel:
+    def __init__(self, name):
+        self.name = name
+        self.rooms = []
+
+    def add_room(self, room):
+        self.rooms.append(room)
+
+    def book_room(self, room_number):
+        for room in self.rooms:
+            if room.room_number == room_number:
+                if not room.is_occupied:
+                    room.is_occupied = True
+                    print(f"Room {room_number} has been booked.")
+                    return
+                else:
+                    print(f"Room {room_number} is already occupied.")
+                    return
+        print(f"Room {room_number} not found.")
+
+    def check_out_room(self, room_number):
+        for room in self.rooms:
+            if room.room_number == room_number:
+                if room.is_occupied:
+                    room.is_occupied = False
+                    print(f"Room {room_number} has been checked out.")
+                    return
+                else:
+                    print(f"Room {room_number} is not currently occupied.")
+                    return
+        print(f"Room {room_number} not found.")
+
+    def display_rooms(self):
+        for room in self.rooms:
+            status = "Occupied" if room.is_occupied else "Available"
+            print(f"Room {room.room_number}: {status}")
+
+# Example usage:
+if __name__ == "__main__":
+    hotel = Hotel("Grand Plaza")
+    
+    room1 = Room(101)
+    room2 = Room(102)
+    room3 = Room(103)
+    
+    hotel.add_room(room1)
+    hotel.add_room(room2)
+    hotel.add_room(room3)
+    
+    hotel.book_room(101)
+    hotel.display_rooms()
+    
+    hotel.check_out_room(101)
+    hotel.display_rooms()
+
+
+
+31-.py()
+from tkinter import *
+window = Tk()
+window.title("Counter")
+window.iconbitmap("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\development_ZqG_icon.ico")
+window.geometry("300x400")
+window.resizable(width= False, height= False)
+
+b = 0
+class counter:
+    def increment(self):
+        global b
+        b += 1
+        l.config(text= "{}".format(b))
+    def decrement(self):
+        global b
+        b -= 1
+        l.config(text="{}".format(b))
+    def close(self):
+        window.destroy()
+counter1 = counter()
+
+l = Label(window,text="0", font= ("Andalus", 18), fg= "green", pady= 30)
+l.pack()
+# l.place(x =140, y= 30)
+btn= Button(window, text="Increment", font= "Andalus", width= 13, command=counter1.increment)
+btn.pack()
+btn.place(x = 70, y= 90)
+btn1 = Button(window, text="Decrement", font= "Andalus", width= 13, command=counter1.decrement)
+btn1.pack()
+btn1.place(x = 70, y= 150)
+btn2 = Button(window, text="Exit", font= "Andalus", width= 13, command=counter1.close)
+btn2.pack()
+btn2.place(x= 70, y= 210)
+window.mainloop()
+
+
+32-.py()
+from tkinter import *
+from tkinter import filedialog
+window = Tk()
+window.iconbitmap("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\development_ZqG_icon.ico")
+window.title("ToDoApp")
+window.geometry("400x500")
+window.resizable(width= False, height= False)
+class Todo_App:
+    def add(self):
+        a = e.get()
+        masage.insert(END, a)
+    def remove(self):
+        a = e.get()
+        for i in range(masage.size()):
+            if masage.get(i) == a:
+                masage.delete(i)            
+        e.delete(0, END)
+    def close(self):
+        window.destroy()
+    def open_1(self):
+            a = filedialog.askopenfilename(initialdir= "/", title= "Open file", filetypes= (("txt files", "*.txt"), ("all file", "*.*")))
+            masage.delete(0, END)
+            file_10 = open(a, "r")
+            masage.insert(0, file_10.read())
+    def saveas(self):
+            data1 = masage.get(0, END)
+            f = filedialog.asksaveasfilename(initialdir= "/", title= "Save As", filetypes= (("txt files", "*.txt"), ("all file", "*.*")))
+            if f != None:
+                f1 = open(f, "w+")
+                f1.write(data1)
+                f1.close()
+todo = Todo_App()
+Label(window, text= "Welcom to my ToDoApp!", font= ("Andalus", 18), fg= "red", pady= 5).pack()
+l = Label(window, text= "My Tasks:", font= ("Andalus", 16))
+l.pack()
+l.place(x= 10, y = 45)
+masage = Listbox(window, width= 37, height= 9, font= ("Andalus", 12))
+masage.pack()
+masage.place(x = 30, y = 90)
+e = Entry(window, font= ("Andalus", 14), justify= CENTER, width= 30)
+e.pack()
+e.place(x = 30, y= 340)
+btn = Button(window, text= "Add Task", font=("Andalus", 13), justify= CENTER, width= 11, command= todo.add)
+btn.pack()
+btn.place(x= 30, y= 390)
+btn1 = Button(window, text= "Remove Task", font=("Andalus", 13), justify= CENTER, width= 11, command= todo.remove)
+btn1.pack()
+btn1.place(x= 142, y= 390)
+btn2 = Button(window, text= "Exit", font=("Andalus", 13), justify= CENTER, width= 11, command= todo.close)
+btn2.pack()
+btn2.place(x= 255, y= 390)
+btn3 = Button(window, text= "Open", width=17, justify= CENTER, font= ("Andalus", 13), height= 1,command= todo.open_1)
+btn3.pack()
+btn3.place(x = 30, y= 440)
+btn4 = Button(window, text= "Save", width=17, justify= CENTER, font= ("Andalus", 13), height= 1, command= todo.saveas)
+btn4.pack()
+btn4.place(x = 200, y= 440)
+window.mainloop()
+
+
+
+
+33-.py()
+from tkinter import *
+window = Tk()
+window.iconbitmap("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\development_ZqG_icon.ico")
+window.title("My simple calculator")
+window.geometry("300x500")
+window.resizable(width= False, height= False)
+e = Entry(window, width= 45, font=("Andlus", 18))
+e.pack()
+e.place(x = 10)
+
+class Calculator:
+    def sub(self):
+        e.insert(INSERT, "-")
+    def mul(self):
+        e.insert(INSERT, "*")
+    def div(self):
+        e.insert(INSERT, "/")
+    def equal(self):
+        eq = eval(e.get())
+        l1.config(text="{}".format(e.get()))
+        l.config(text="{}".format(eq))
+        e.delete(0, END)
+    def sum_1(self):
+        e.insert(INSERT, "+")
+    def point(self):
+        e.insert(INSERT, ".")
+    def zero(self):
+        e.insert(INSERT, 0)
+    def one(self):
+        e.insert(INSERT, 1)
+    def two(self):
+        e.insert(INSERT, 2)
+    def three(self):
+        e.insert(INSERT, 3)
+    def four(self):
+        e.insert(INSERT, 4)
+    def five(self):
+        e.insert(INSERT, 5)
+    def six(self):
+        e.insert(INSERT, 6)
+    def seven(self):
+        e.insert(INSERT, 7)
+    def eight(self):
+        e.insert(INSERT, 8)
+    def nine(self):
+        e.insert(INSERT, 9)
+    def clean(self):
+        e.delete(0, END)
+    def cc(self):
+        c = e.get()
+        e.delete(0, END)
+        e.insert(INSERT, c[:-1])
+
+cal = Calculator()
+
+l1 = Label(window,text= "", font= ("Andalus", 18), fg= "black")
+l1.pack()
+l1.place(x= 10,y= 50)
+l = Label(window,text= "", font= ("Andalus", 28), fg= "green")
+l.pack()
+l.place(x= 10,y= 80)
+b1 = Button(window, text= "C", font=("Andalus", 18), width= 4, padx= 5, command= cal.clean)
+b1.pack()
+b1.place(x= 10, y= 150)
+b2 = Button(window, text= "/", font=("Andalus", 18), width= 4, padx= 5, command= cal.div)
+b2.pack()
+b2.place(x= 80, y= 150)
+b3 = Button(window, text= "*", font=("Andalus", 18), width= 4,padx= 5, command= cal.mul)
+b3.pack()
+b3.place(x= 150, y= 150)
+b4 = Button(window, text= "x", font=("Andalus", 18), width= 4, padx= 5, command= cal.cc)
+b4.pack()
+b4.place(x= 220, y= 150)
+b5 = Button(window, text= "7", font=("Andalus", 18), width= 4, padx= 5, command= cal.seven)
+b5.pack()
+b5.place(x= 10, y= 220)
+b6 = Button(window, text= "8", font=("Andalus", 18), width= 4, padx= 5, command= cal.eight)
+b6.pack()
+b6.place(x= 80, y= 220)
+b7 = Button(window, text= "9", font=("Andalus", 18), width= 4,padx= 5, command= cal.nine)
+b7.pack()
+b7.place(x= 150, y= 220)
+b8 = Button(window, text= "-", font=("Andalus", 18), width= 4, padx= 5, command= cal.sub)
+b8.pack()
+b8.place(x= 220, y= 220)
+b9 = Button(window, text= "4", font=("Andalus", 18), width= 4, padx= 5, command= cal.four)
+b9.pack()
+b9.place(x= 10, y= 290)
+b10 = Button(window, text= "5", font=("Andalus", 18), width= 4, padx= 5, command= cal.five)
+b10.pack()
+b10.place(x= 80, y= 290)
+b11 = Button(window, text= "6", font=("Andalus", 18), width= 4,padx= 5, command= cal.six)
+b11.pack()
+b11.place(x= 150, y= 290)
+b12 = Button(window, text= "+", font=("Andalus", 18), width= 4, padx= 5, command= cal.sum_1)
+b12.pack()
+b12.place(x= 220, y= 290)
+b13 = Button(window, text= "1", font=("Andalus", 18), width= 4, padx= 5, command= cal.one)
+b13.pack()
+b13.place(x= 10, y= 360)
+b14 = Button(window, text= "2", font=("Andalus", 18), width= 4, padx= 5, command= cal.two)
+b14.pack()
+b14.place(x= 80, y= 360)
+b15 = Button(window, text= "3", font=("Andalus", 18), width= 4,padx= 5, command= cal.three)
+b15.pack()
+b15.place(x= 150, y= 360)
+b4 = Button(window, text= "=", font=("Andalus", 18), width= 4, padx= 5, height= 3,command= cal.equal)
+b4.pack()
+b4.place(x= 220, y= 360)
+b17 = Button(window, text= "0", font=("Andalus", 18), width= 9, padx= 5, command= cal.zero)
+b17.pack()
+b17.place(x= 10, y= 430)
+b19 = Button(window, text= ".", font=("Andalus", 18), width= 4,padx= 5, command= cal.point)
+b19.pack()
+b19.place(x= 150, y= 430)
+
+
+
+
+window.mainloop()
+
+
+
+34-.py()
+from tkinter import *
+window = Tk()
+window.title("Login App")
+window.geometry("300x450")
+window.resizable(width= False, height= False)
+window.iconbitmap("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\development_ZqG_icon.ico")
+class LoginApp:
+      def exit(self):
+            window.destroy()
+      def log_in(self):
+            if e1.get() == "1":
+                window.destroy()
+                root = Tk()
+                root.geometry("250x300")
+                root.title("Login App")
+                root.resizable(width= False, height= False)
+                root.iconbitmap("C:\\Users\\Omid Shahizada\\OneDrive\\Desktop\\development_ZqG_icon.ico")
+                def close():
+                    root.destroy()
+                l1 = Label(root,text="Welcome!",font=("Andalus", 24), fg="green")
+                l1.pack()
+                l1.place(x= 60, y = 40)
+                l = Label(root, text= "This is a simple Login App!", font="Andalus", fg="green", pady= 30)
+                l.pack()
+                l.place(x= 20, y = 80)
+                btn2 =Button(root, text= "Exit", font="Andalus", fg= "red", width= 20, command= close )
+                btn2.pack()
+                btn2.place(x = 10, y= 160)
+                root.mainloop()
+            else:
+                l5.config(text= "The entered password is wroung!")
+log = LoginApp()
+
+Label(window, text= "Welcome", font=("Andalus", 24), fg= "green", pady=20).pack()
+Label(window, text= "Full Name", font="Andalus", fg= "green").pack()
+l5 = Label(window, font="Andalus", fg= "red")
+l5.pack()
+l5.place(x = 10, y= 380)
+e = Entry(window, font= "Andalus", justify= CENTER)
+e.pack()
+Label(window, text= "Password", font="Andalus", fg= "green").pack()
+e1 = Entry(window,font= "Andalus", justify= CENTER)
+e1.pack()
+btn =Button(window, text= "Log in", font="Andalus", fg= "red", width= 12, command= log.log_in )
+btn.pack()
+btn.place(x = 90, y= 250)
+btn1 =Button(window, text= "Exit", font="Andalus", fg= "red", width= 12, command= exit )
+btn1.pack()
+btn1.place(x = 90, y= 320)
+window.mainloop()
+
+35-.py()
+from tkinter import *
+window = Tk()
+window.geometry("700x500")
+window.title("Wearther App")
+class wheartherApp:
+    def __init__(self, wheather_con, degree):
+        self.wh = wheather_con
+        self.d = degree
+    def show(self):
+        l.config(text=f"The weather is {self.wh} and wheather degree is : {self.d} cilcus")
+w = wheartherApp("Sunnny", 20)
+l = Label(window, font=("Andalus", 20), justify= CENTER, fg= "red")
+l.pack()
+l.place(x = 20, y = 150)
+b =Button(window, text= "Check", font = ("Andalus", 13), width= 20, justify= CENTER, command= w.show)
+b.pack()
+b .place(x = 250, y= 250)
+window.mainloop()
+
+

@@ -1,0 +1,7 @@
+a = int(input("Enter the number: "))
+x = 1
+y = 1
+while x <= a:
+    y = x * y
+    x += 1
+print(y)
